@@ -45,3 +45,15 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+# Added libraries
+- Axios for http-handling
+- Material-UI for finished components
+
+
+# Given more time
+
+- Retrieve data in chunks, for performance, with something like https://github.com/bvaughn/react-window and https://www.npmjs.com/package/react-window-infinite-loader
+- Compress retrieved image and show lower res version as thumbnail
+- Obviously make components prettier, according to a spec if applicable
+- Set index to the posts?

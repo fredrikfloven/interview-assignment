@@ -1,6 +1,6 @@
-import React, {Fragment, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import Content from "./Content";
+import Content from "./components/Content";
 import './App.css';
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
     //console.log({data});
 
     return (
-        <Fragment>
+        <main>
             <button type="button" onClick={() => setUrl(`http://localhost:3001/posts`)}>
                 Posts
             </button>
@@ -48,7 +48,7 @@ function App() {
                 ) : (
                     <Content contentType={param} content={data}/>
                 )}
-        </Fragment>
+        </main>
     );
 
 }
