@@ -1,34 +1,54 @@
-import React, {useState, useEffect} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import axios from "axios";
-import logo from './logo.svg';
+import Content from "./Content";
 import './App.css';
 
 function App() {
     //Use React Hooks useState to initialize local state
     const [data, setData] = useState([]);
+    const [param, setParam] = useState(`posts`);
+    //const [query, setQuery] = useState(``);
+    const [url, setUrl] = useState(`http://localhost:3001/${param}`);
+    const [isLoading, setIsLoading] = useState(false);
+    const [isError, setIsError] = useState(false);
 
     //Use React Hooks useEffect for side effects, in this case http content retrieval
     useEffect(() => {
-            const fetchData = async () => {
-                const result = await axios(
-                    'http://localhost:3001/impacters',
-                );
-                setData(result.data); // useEffect must according to docs return a clean func or nothing, so call async func inside effect
+            const fetchData = async () => { // useEffect must according to docs return a clean func or nothing, so call async func inside effect
+                setIsError(false);
+                setIsLoading(true);
+
+                try {
+                    const result = await axios(url);
+                    setData(result.data);
+                } catch (error) {
+                    setIsError(true);
+                }
+
+                setIsLoading(false);
+
             };
             fetchData();
         }
-        , []);  // Avoid loop, only fetch data when component mounts and avoid update on component updates
+        , [url]);  // Avoid loop, only fetch data when component mounts and avoid update on component updates
 
-    console.log({data});
+    //console.log({data});
 
     return (
-        <ul>
-            {data.map(impacter => (
-                <li key={impacter.id}>
-                    <a href={impacter.profile_image}>{impacter.name}</a>
-                </li>
-            ))}
-        </ul>
+        <Fragment>
+            <button type="button" onClick={() => setUrl(`http://localhost:3001/posts`)}>
+                Posts
+            </button>
+
+            {isError && <div>Something went wrong ...</div>}
+
+            {isLoading ?
+                (
+                    <div>Loading...</div>
+                ) : (
+                    <Content contentType={param} content={data}/>
+                )}
+        </Fragment>
     );
 
 }
