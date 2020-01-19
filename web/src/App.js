@@ -32,7 +32,6 @@ function App() {
         }
         , [url]);  // Avoid loop, only fetch data when component mounts and avoid update on component updates
 
-    //console.log({data});
 
     return (
         <main>

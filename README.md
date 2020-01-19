@@ -4,7 +4,7 @@ This repo gives you the basic setup for our coding assignments and information a
 
 # Background
 
-At Milkywire we work with small local charity organizations that do hands on work in the field. We call people working for these organizations impacters. Impacters continually create posts to keep the users that support them updated with what is happening in the field.
+At Milkywire we work with small local charity organizations that do hands on work in the field. We call people working for these organizations impacters. Content continually create posts to keep the users that support them updated with what is happening in the field.
 
 We now want to create a system that lets impacters administer their posts using an app or the web. It is your task to help build on part of this system.
 
