@@ -5,12 +5,17 @@ We provided a small api for you to use during the development. The api runs on [
 
 
 `GET /impacters` - List all impacters
+
 `GET /impacters/:id` - Get a impacter
 
 `GET /posts` - List all posts
+
 `POST /posts` - Create a new post
+
 `GET /posts/:id` - Get a post
+
 `PUT /posts/:id` - Update a post
+
 `DELETE /posts/:id` - Delete a post
 
 `POST /upload` - Upload a new image and get a url back
