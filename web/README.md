@@ -58,13 +58,38 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
 # Added libraries
 - Axios for http-handling
 - Material-UI for finished components
 
+# Modified API
+- Added parsing of parameter to be able to remove post
 
 # Given more time
 
+### Function
+- Fix ForwardRef https://material-ui.com/guides/composition/#caveat-with-refs
+- Modify any part of a post, maybe with form
+- Update parent component(s) when updating/deleting post
+- Probably use reducer hooks https://reactjs.org/docs/hooks-reference.html#usereducer
+- Maybe redo how modal receives data, maybe each post shouldn't get it's own modal, but a modal component should when triggered be given an id, and take the content from app state
+
+### Performance
 - Lazy load resources with something like https://github.com/bvaughn/react-window and https://www.npmjs.com/package/react-window-infinite-loader
-- Show lower res image version as thumbnail
-- Obviously make components prettier
+- In modal, prefetch data to next and previous posts, for faster navigation
+- Don't fetch next/prev post, get it from parent if already fetched
+
+### Design
+- Crop image if too high
+- Show lower res image version as thumbnail in list
+- Put previous/next buttons on left/right in modal
+- Don't show prev/next if there is no post to go to
+- Obviously make components prettier, maybe use own styling, not a library, depending on need
+
+### Code
+- Destructure state objects, for clearer code 
+- Break out axios calls
+- Set up axios config

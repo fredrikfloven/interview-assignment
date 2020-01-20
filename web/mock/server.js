@@ -99,9 +99,10 @@ fastify.put("/posts/:id", async (request, reply) => {
 });
 
 fastify.delete("/posts/:id", async (request, reply) => {
-  const postIndex = posts.findIndex(post => post.id === request.params.id);
+  const id = request.params.id ? Number.parseInt(request.params.id) : -1;
+  const postIndex = posts.findIndex(post => post.id === id);
   posts.splice(postIndex, 1);
-  return;
+  return postIndex;
 });
 
 fastify.post("/upload", async function(request, reply) {
