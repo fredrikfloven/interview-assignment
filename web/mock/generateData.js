@@ -55,19 +55,16 @@ async function createImpacters(numberOfImpacters) {
 
 async function createPosts(impacters, numberOfPostsPerImpacter) {
   const result = [];
-    let index_number = 0;
   for (let i = 0; i < impacters.length; i++) {
     const { id } = impacters[i];
-      //index_number = index_number + 1;
     console.log(`Creating posts for impacter ${id}...`);
     const images = await getImages(numberOfPostsPerImpacter, i + 1);
     for (let index = 0; index < numberOfPostsPerImpacter; index++) {
       try {
         const { download_url, width, height, author } = images[index];
-          index_number = index_number + 1;
           result.push({
+              id: result.length,
               type: "IMAGES",
-              id: index_number,
               description: loremIpsum({count: 10, units: "word"}),
               data: {
                   media: [

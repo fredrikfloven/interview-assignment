@@ -3,12 +3,10 @@ import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 
-import SimpleModal from "./SimpleModal";
+import PostModalComponent from "./PostModalComponent";
 import '../App.css';
 
-function Content(props) {
-    //Use React Hooks useState to initialize local state
-    //const [data, setData] = useState([]);
+function ContentList(props) {
     const useStyles = makeStyles(theme => ({
         root: {
             width: '100%',
@@ -19,14 +17,12 @@ function Content(props) {
 
     const classes = useStyles();
 
-    console.log({props});
-
     return (
         <div>
             {props.content !== null ? (
                 <List component="nav" className={classes.root} aria-label="contacts">
-                    {props.content.slice(0, 20).map((post) => (
-                        <SimpleModal post={post} key={post.id}/>
+                    {props.content.map((post) => (
+                        <PostModalComponent post={post} key={post.id}/>
                     ))}
                 </List>) : ("No content found")}
         </div>
@@ -35,4 +31,4 @@ function Content(props) {
 
 }
 
-export default Content;
+export default ContentList;

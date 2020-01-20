@@ -1,14 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import Content from "./components/Content";
+import ContentList from "./components/ContentList";
 import './App.css';
 
 function App() {
     //Use React Hooks useState to initialize local state
     const [data, setData] = useState([]);
-    const [param, setParam] = useState(`posts`);
-    //const [query, setQuery] = useState(``);
-    const [url, setUrl] = useState(`http://localhost:3001/${param}`);
+    const [url, setUrl] = useState(`http://localhost:3001/posts`);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
@@ -45,7 +43,7 @@ function App() {
                 (
                     <div>Loading...</div>
                 ) : (
-                    <Content contentType={param} content={data}/>
+                    <ContentList content={data}/>
                 )}
         </main>
     );

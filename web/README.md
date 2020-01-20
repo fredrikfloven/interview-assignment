@@ -1,14 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## API
-We provided a small api for you to use during the development. The api runs on [http://localhost:3001](http://localhost:3001).
 
+We provided a small api for you to use during the development. The api runs on [http://localhost:3001](http://localhost:3001).
 
 `GET /impacters` - List all impacters
 
 `GET /impacters/:id` - Get a impacter
 
-`GET /posts` - List all posts
+`GET /impacters/:id/posts` - Get all posts for an impacter
+
+`GET /posts?limit={}&offset={}` - List posts, if no limit is set it will list all posts
 
 `POST /posts` - Create a new post
 
@@ -21,6 +23,18 @@ We provided a small api for you to use during the development. The api runs on [
 `POST /upload` - Upload a new image and get a url back
 
 If you want the api to generate new data remove the `./mock/data.json` file. Please be aware that this will take some time and will be done by the server on the next start. The server will not start until it's done generating data.
+
+## Images
+
+All images follow this url structure `https://picsum.photos/id/{pictureId}/{width}/{height}` and are given in their original size from the API.
+
+You can change the size of an image by changing the two last values of the path.
+
+Example:
+
+Original: https://picsum.photos/id/1000/5626/3635
+
+Downsize to 308 x 199: https://picsum.photos/id/1000/308/199
 
 ## Available Scripts
 
@@ -39,13 +53,11 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
-
 # Added libraries
 - Axios for http-handling
 - Material-UI for finished components
@@ -53,7 +65,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # Given more time
 
-- Retrieve data in chunks, for performance, with something like https://github.com/bvaughn/react-window and https://www.npmjs.com/package/react-window-infinite-loader
+- Retrieve data in chunks, for performance, or lazy load resources with something like https://github.com/bvaughn/react-window and https://www.npmjs.com/package/react-window-infinite-loader
 - Compress retrieved image and show lower res version as thumbnail
 - Obviously make components prettier, according to a spec if applicable
 - Set index to the posts?
