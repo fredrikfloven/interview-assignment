@@ -53,6 +53,14 @@ export default function SimpleModal(props) {
         alert("Previous clicked");
     };
 
+    const handleClickChange = () => {
+        alert("Change clicked");
+    };
+
+    const handleClickDelete = () => {
+        alert("Delete clicked");
+    };
+
     return (
         <div>
             <ListItem button onClick={handleOpen}>
@@ -77,6 +85,14 @@ export default function SimpleModal(props) {
                     <p id="simple-modal-description">
                         Author: {state.post.data.media[0].description}
                     </p>
+                    <div id="update-delete-buttons" style={{textAlign: "center"}}>
+                        <Button variant="contained" color="primary" onClick={handleClickChange}>
+                            Change
+                        </Button>
+                        <Button variant="contained" color="secondary" onClick={handleClickDelete}>
+                            Delete
+                        </Button>
+                    </div>
                     <div id="modal-navigation-buttons">
                         <Button style={{float: "left"}} variant="contained" color="primary" onClick={handleClickNext}>
                             Previous
