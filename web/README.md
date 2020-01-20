@@ -76,6 +76,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - Update parent component(s) when updating/deleting post
 - Probably use reducer hooks https://reactjs.org/docs/hooks-reference.html#usereducer
 - Maybe redo how modal receives data, maybe each post shouldn't get it's own modal, but a modal component should when triggered be given an id, and take the content from app state
+- Not use +1/-1 index for next/previous post, but take next element in collection from parent
 
 ### Performance
 - Lazy load resources with something like https://github.com/bvaughn/react-window and https://www.npmjs.com/package/react-window-infinite-loader
