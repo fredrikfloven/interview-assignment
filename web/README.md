@@ -65,7 +65,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # Given more time
 
-- Retrieve data in chunks, for performance, or lazy load resources with something like https://github.com/bvaughn/react-window and https://www.npmjs.com/package/react-window-infinite-loader
-- Compress retrieved image and show lower res version as thumbnail
-- Obviously make components prettier, according to a spec if applicable
-- Set index to the posts?
+- Lazy load resources with something like https://github.com/bvaughn/react-window and https://www.npmjs.com/package/react-window-infinite-loader
+- Show lower res image version as thumbnail
+- Obviously make components prettier
