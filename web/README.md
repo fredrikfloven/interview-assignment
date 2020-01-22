@@ -70,18 +70,21 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 # Given more time
 
+### Tests
+- Add tests
+
 ### Function
 - Fix ForwardRef https://material-ui.com/guides/composition/#caveat-with-refs
 - Modify any part of a post, maybe with form
 - Update parent component(s) when updating/deleting post
 - Probably use reducer hooks https://reactjs.org/docs/hooks-reference.html#usereducer
 - Maybe redo how modal receives data, maybe each post shouldn't get it's own modal, but a modal component should when triggered be given an id, and take the content from app state
-- Not use +1/-1 index for next/previous post, but take next element in collection from parent
+- Not use +1/-1 index for next/previous post, but take next element in collection from parent for example
 
 ### Performance
 - Lazy load resources with something like https://github.com/bvaughn/react-window and https://www.npmjs.com/package/react-window-infinite-loader
 - In modal, prefetch data to next and previous posts, for faster navigation
-- Don't fetch next/prev post, get it from parent if already fetched
+- Don't fetch next/prev post from server, get it from parent if already fetched
 
 ### Design
 - Crop image if too high

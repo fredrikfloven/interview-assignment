@@ -83,6 +83,7 @@ function ModalContent({postContent, handleClose}) {
             <p id="simple-modal-description">
                 Author: {state.data.media[0].description}
             </p>
+
             <div id="update-and-delete-buttons" style={{textAlign: "center"}}>
                 <Button variant="contained" color="primary" onClick={handleClickChange}>
                     Change
@@ -91,6 +92,7 @@ function ModalContent({postContent, handleClose}) {
                     Delete
                 </Button>
             </div>
+
             <div id="modal-navigation-buttons">
                 <Button style={{float: "left"}} variant="contained" color="primary" onClick={handleClickPrevious}>
                     Previous
